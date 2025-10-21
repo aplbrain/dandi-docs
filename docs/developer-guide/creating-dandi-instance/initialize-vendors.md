@@ -387,7 +387,7 @@ For your account, the free `Developer` account should be sufficient, as defined 
 
 ##### Select Django as an App Type
 
-DANDI Archive API is built as a Django app -- so proceed to select `Django` on the following screen:
+{{ instance.name }} Archive API is built as a Django app -- so proceed to select `Django` on the following screen:
 
 <br/><br/>
 <img

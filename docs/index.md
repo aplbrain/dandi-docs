@@ -15,7 +15,7 @@ it tries to solve, check out the [Introduction](./introduction.md).
 
 To start using the archive, head over to the User Guide sections for [Sharing Data](./user-guide-sharing/creating-dandiset.md) or [Using Data](./user-guide-using/exploring-dandisets.md).
 
-If are a developer and want to know how the project is organized, check out the [DANDI Ecosystem](./getting-started/dandi-ecosystem.md)
+If are a developer and want to know how the project is organized, check out the [{{ instance.name }} Ecosystem](./getting-started/dandi-ecosystem.md)
 page in the Getting Started section.
 
 
@@ -31,7 +31,7 @@ and use the tag [dandi](https://neurostars.org/tag/dandi).
   {{ instance.name }} using GitHub]({{ instance.uri }}/) (this registration is required to upload data or to use the {{ instance.name }} 
   JupyterHub). See [here for details on how to
   register](./getting-started/creating-account.md).
-- Email us: [info@dandiarchive.org](mailto: info@dandiarchive.org)
+- Email us: [info@{{ instance.domain }}](mailto: info@{{ instance.domain }})
 
 ## Contributing and Feedback
 

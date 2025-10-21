@@ -1,6 +1,6 @@
 # System Architecture
 
-This page provides a high-level view of how DANDI's core components fit together in a typical "full stack" deployment.
+This page provides a high-level view of how {{ instance.name }}'s core components fit together in a typical "full stack" deployment.
 
 ## The Big Picture
 
@@ -20,7 +20,7 @@ src="../../img/client_requests.jpg"
 alt="client_requests"
 style="width: 90%; height: auto; display: block; margin-left: auto;  margin-right: auto;"/>
 
-* The user (or script) interacts with the **Web UI** or the **DANDI CLI**.
+* The user (or script) interacts with the **Web UI** or the **{{ instance.name }} CLI**.
 * The **Web UI** calls into the **API** (over HTTPS).
 * The **API** queries or updates metadata in its Postgres DB (hosted on Heroku).
 * The **API** calls AWS S3 to read/write {{ instance.name }} assets.

@@ -1,14 +1,14 @@
 # Terms of Use v1.0.1
 
-The {{ instance.name }} data archive ("DANDI") is offered by the {{ instance.name }} project as part of its
+The {{ instance.name }} data archive ("{{ instance.name }}") is offered by the {{ instance.name }} project as part of its
 mission to make available the results of its work.
 
-Use of DANDI, both the uploading and downloading of data, denotes agreement with
+Use of {{ instance.name }}, both the uploading and downloading of data, denotes agreement with
 the following terms:
 
 1. {{ instance.name }} is an open dissemination research data repository for the preservation
    and making available of research, educational and informational content. Access
-   to DANDI's content is open to all.
+   to {{ instance.name }}'s content is open to all.
 
 1. Content may be uploaded free of charge by the US BRAIN Initiative and other
    projects required to submit data to a public archive and those without ready
@@ -21,10 +21,10 @@ the following terms:
    terms and applicable laws, including, but not limited to, privacy, data
    protection and intellectual property rights [1]. In addition, where data that
    was originally sensitive personal data is being uploaded for open dissemination
-   through DANDI, the uploader shall ensure that such data is either anonymized
+   through {{ instance.name }}, the uploader shall ensure that such data is either anonymized
    to an appropriate degree or fully consent cleared [2].
 
-1. Access to DANDI, and all content, is provided on an "as-is" basis. Users of
+1. Access to {{ instance.name }}, and all content, is provided on an "as-is" basis. Users of
    content ("Users") shall respect applicable license conditions. Download and
    use of content from {{ instance.name }} does not transfer any intellectual property rights
    in the content to the User.
@@ -54,7 +54,7 @@ the following terms:
 [1] [2] See further the user pages regarding uploading for information on anonymization
 of datasets that contain sensitive personal information.
 
-If you have any questions or comments with respect to DANDI, or if you are unsure
+If you have any questions or comments with respect to {{ instance.name }}, or if you are unsure
 whether your intended use is in line with these Terms of Use, or if you seek
 permission for a use that does not fall within these Terms of Use, please [contact
 us](https://github.com/dandi/helpdesk/issues/new/choose).

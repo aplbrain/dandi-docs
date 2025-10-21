@@ -1,4 +1,4 @@
-This step assumes that you have completed all steps in: [Initialize Vendors](./initialize-vendors.md) & [DANDI Infrastructure](./dandi-infrastructure.md).
+This step assumes that you have completed all steps in: [Initialize Vendors](./initialize-vendors.md) & [{{ instance.name }} Infrastructure](./dandi-infrastructure.md).
 
 ## Initial Steps
 
@@ -15,7 +15,7 @@ To see how your code would translate into a new `Heroku` release, [see the GitHu
 Heroku initializes compute on servers (known as `dynos` in Heroku land). Each `dyno` that you have runs a process.
 Which process, the resources allocated to that process, and how that process is run, is defined in a `Procfile`.
 
-DANDI Archive defines a [Procfile](https://github.com/dandi/dandi-archive/blob/master/Procfile). In this `Procfile`,
+{{ instance.name }} Archive defines a [Procfile](https://github.com/dandi/dandi-archive/blob/master/Procfile). In this `Procfile`,
 you'll see several entries:
 
 - `release`: a command that is run each time a new version of {{ instance.name }} API is pushed to Heroku.
@@ -24,9 +24,9 @@ you'll see several entries:
 - `checksum-worker`: another worker, also using `celery`, that specifically calculates if a new file pushed to {{ instance.name }} Archive is new/updated, and determines what exactly has been changed.
 - `analytics-worker`: another `celery` worker that handles all tasks related to processing of S3-related logs.
 
-This `Procfile` shouldn't need to be changed or reconfigured much for a DANDI-clone; however, it is important to note so that one may understand how {{ instance.name }} Archive is working.
+This `Procfile` shouldn't need to be changed or reconfigured much for a {{ instance.name }}-clone; however, it is important to note so that one may understand how {{ instance.name }} Archive is working.
 
-For information on the resource allocation of `dynos` in {{ instance.name }} Archive, please reference the [DANDI Infrastructure Docs](./dandi-infrastructure.md).
+For information on the resource allocation of `dynos` in {{ instance.name }} Archive, please reference the [{{ instance.name }} Infrastructure Docs](./dandi-infrastructure.md).
 
 ## Understanding metrics and logging via Heroku
 
@@ -157,7 +157,7 @@ class HerokuProductionConfiguration(DandiMixin, HerokuProductionBaseConfiguratio
 
 ## Approval of Users
 
-By default in DANDI, only users whose emails end in `.edu` are automatically approved -- [for code reference, see here](https://github.com/dandi/dandi-archive/blob/6e72653688a6b45066c04b94a44f830b734887dd/dandiapi/api/views/auth.py#L127).
+By default in {{ instance.name }}, only users whose emails end in `.edu` are automatically approved -- [for code reference, see here](https://github.com/dandi/dandi-archive/blob/6e72653688a6b45066c04b94a44f830b734887dd/dandiapi/api/views/auth.py#L127).
 
 For all other users, proceed into the Django Admin panel.
 

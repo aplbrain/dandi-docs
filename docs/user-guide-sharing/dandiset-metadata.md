@@ -8,7 +8,7 @@ This metadata will automatically be re-computed if you make any changes to the d
 
 ## Metadata editor
 
-DANDI also has metadata that you must set manually using the `METADATA` button on the right panel.
+{{ instance.name }} also has metadata that you must set manually using the `METADATA` button on the right panel.
 Any `Owner` of a Dandiset has the ability to edit the manual Dandiset metadata through this editor.
 Several fields here are essential for publication, and the rest provide opportunities to make your Dandiset
 more FAIR, enabling secondary analysis.

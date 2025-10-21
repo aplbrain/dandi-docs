@@ -26,4 +26,4 @@ restriction.
 
 You can learn more about the theory of how the Creative Commons licenses operate
 at [their website](https://creativecommons.org/licenses/). If you have any
-questions or concerns, send a message to help@dandiarchive.org.
+questions or concerns, send a message to help@{{ instance.domain }}.

@@ -21,7 +21,7 @@ Citing the Dandiset and other datasets is important because it provides a direct
 ## Data availability statement
 
 It is common for journals to require a Data Availability Statement in the manuscript, which should include the
-DANDI Archive RRID and the DOI of the Dandiset used in the research.
+{{ instance.name }} Archive RRID and the DOI of the Dandiset used in the research.
 Here is an example of a well formatted Data Availability Statement:
 
 > The data that support the findings of this study are openly available on the {{ instance.name }} Archive (RRID:SCR_017571) at [DOI of Dandiset] (citation of Dandiset).

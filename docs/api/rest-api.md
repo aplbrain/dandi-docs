@@ -6,8 +6,8 @@ The {{ instance.name }} Archive provides a RESTful API that allows programmatic 
 
 The {{ instance.name }} API is available at:
 
-- Production: [https://api.dandiarchive.org/](https://api.dandiarchive.org/)
-- Sandbox: [https://api.sandbox.dandiarchive.org/](https://api.sandbox.dandiarchive.org/)
+- Production: [{{ instance.api }}/]({{ instance.api }}/)
+- Sandbox: [{{ instance.sandbox_api }}/]({{ instance.sandbox_api }}/)
 
 ## API Documentation
 
@@ -15,8 +15,8 @@ The API documentation is available in three formats:
 
 ### Swagger UI
 
-- Production: [https://api.dandiarchive.org/swagger/](https://api.dandiarchive.org/swagger/)
-- Sandbox: [https://api.sandbox.dandiarchive.org/swagger/](https://api.sandbox.dandiarchive.org/swagger/)
+- Production: [{{ instance.api }}/swagger/]({{ instance.api }}/swagger/)
+- Sandbox: [{{ instance.sandbox_api }}/swagger/]({{ instance.sandbox_api }}/swagger/)
 
 The Swagger UI allows you to:
 
@@ -27,8 +27,8 @@ The Swagger UI allows you to:
 
 ### ReDoc
 
-- Production: [https://api.dandiarchive.org/redoc/](https://api.dandiarchive.org/redoc/)
-- Sandbox: [https://api.sandbox.dandiarchive.org/redoc/](https://api.sandbox.dandiarchive.org/redoc/)
+- Production: [{{ instance.api }}/redoc/]({{ instance.api }}/redoc/)
+- Sandbox: [{{ instance.sandbox_api }}/redoc/]({{ instance.sandbox_api }}/redoc/)
 
 The ReDoc interface provides:
 

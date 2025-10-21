@@ -1,8 +1,8 @@
 # Introduction
 
-## What is DANDI?
+## What is {{ instance.name }}?
 
-DANDI is:
+{{ instance.name }} is:
 
 - An open data archive to submit neurophysiology data for electrophysiology,
 optophysiology, and behavioral time-series, and images from immunostaining experiments.
@@ -10,7 +10,7 @@ optophysiology, and behavioral time-series, and images from immunostaining exper
 - A place to house data to collaborate across research sites.
 - Supported by the BRAIN Initiative and the AWS Public dataset programs.
 
-DANDI provides significant benefits:
+{{ instance.name }} provides significant benefits:
 
 - A [FAIR (Findable, Accessible, Interoperable, Reusable)](https://www.force11.org/group/fairgroup/fairprinciples) data archive to house standardized neurophysiology and associated data.
 - Rich metadata to support search across data.

@@ -34,7 +34,7 @@ Follow these steps to publish your Dandiset:
 **NOTE:** Dandisets with Zarr assets currently cannot be published. We are 
 actively working on enabling this feature.
 
-## Citing DANDI
+## Citing {{ instance.name }}
 
 You can add the following statement to the methods section of your manuscript.
 

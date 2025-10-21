@@ -4,12 +4,12 @@ This page provides instructions for uploading data to {{ instance.name }} after 
 
 ## Prerequisites
 
-Before uploading data to DANDI, ensure you have:
+Before uploading data to {{ instance.name }}, ensure you have:
 
-1. [Created a Dandiset](./creating-dandiset.md) on DANDI
+1. [Created a Dandiset](./creating-dandiset.md) on {{ instance.name }}
 2. [Converted your data to NWB format](./converting-data/index.md)
-3. [Validated your NWB files](./validating-files.md) to ensure they meet DANDI's requirements
-4. Installed the [DANDI Client](https://pypi.org/project/dandi/):
+3. [Validated your NWB files](./validating-files.md) to ensure they meet {{ instance.name }}'s requirements
+4. Installed the [{{ instance.name }} Client](https://pypi.org/project/dandi/):
    ```bash
    pip install -U dandi
    ```
@@ -24,11 +24,11 @@ Before uploading data to DANDI, ensure you have:
 
 ## Upload Methods
 
-DANDI provides two main methods for uploading data:
+{{ instance.name }} provides two main methods for uploading data:
 
 ### 1. Using NWB GUIDE
 
-The NWB GUIDE provides a graphical interface for uploading data to DANDI. See the [NWB GUIDE Dataset Publication Tutorial](https://nwb-guide.readthedocs.io/en/latest/tutorials/dataset_publication.html) for more information.
+The NWB GUIDE provides a graphical interface for uploading data to {{ instance.name }}. See the [NWB GUIDE Dataset Publication Tutorial](https://nwb-guide.readthedocs.io/en/latest/tutorials/dataset_publication.html) for more information.
 
 ### 2. Using the {{ instance.name }} CLI
 
@@ -91,7 +91,7 @@ If you encounter issues during the upload process:
 - Ensure your NWB files pass validation (see [Validating NWB Files](./validating-files.md))
 - Check that you're using the latest versions of `dandi`, `PyNWB`, and `MatNWB`
 
-If you continue to have issues, please reach out via the [DANDI Help Desk](https://github.com/dandi/helpdesk/discussions).
+If you continue to have issues, please reach out via the [{{ instance.name }} Help Desk](https://github.com/dandi/helpdesk/discussions).
 
 
 ## Debugging the {{ instance.name }} CLI

@@ -1,10 +1,10 @@
-# Integrate External Services with DANDI
+# Integrate External Services with {{ instance.name }}
 
 This page provides guidance on how to integrate external services with the {{ instance.name }} Archive, including how to work with {{ instance.name }} metadata models and APIs.
 
 ## {{ instance.name }} Metadata Models Integration
 
-**DANDI metadata models** are defined as 
+**{{ instance.name }} metadata models** are defined as 
 [Pydantic models](https://github.com/dandi/dandi-schema/blob/master/dandischema/models.py)
 in [**dandischema**](https://github.com/dandi/dandi-schema) and transformed into 
 [JSON schemas](https://github.com/dandi/schema). **Both** representations — 
@@ -25,7 +25,7 @@ flowchart TD
     end
     subgraph subGraph1["<a href=https://github.com/dandi/dandi-archive>dandi/dandi-archive</a>"]
         dandi_archive_db[("PostgresDB")]
-        dandi_archive_backend@{ label: "<a href=\"https://api.dandiarchive.org\">api.dandiarchive.org</a><br>(Backend/API)" }
+        dandi_archive_backend@{ label: "<a href=\"{{ instance.api }}\">api.dandiarchive.org</a><br>(Backend/API)" }
         dandi_archive_frontend@{ label: "<a href=\"https://www.dandiarchive.org\">www.dandiarchive.org</a><br>(Frontend/Web UI)" }
         meditor["Meditor<br>(vjsf-based web form)"]
         dandi_archive_validate[/"Celery task to validate<br>dandiset and asset metadata"/]
@@ -66,14 +66,14 @@ flowchart TD
 
 ## Integration Methods
 
-There are several ways to integrate external services with DANDI:
+There are several ways to integrate external services with {{ instance.name }}:
 
 ### 1. REST API Integration
 
 The {{ instance.name }} Archive provides a comprehensive REST API that allows external services to interact with the archive programmatically. The API documentation is available at:
 
-- [Swagger UI](https://api.dandiarchive.org/swagger)
-- [ReDoc](https://api.dandiarchive.org/redoc)
+- [Swagger UI]({{ instance.api }}/swagger)
+- [ReDoc]({{ instance.api }}/redoc)
 
 Key API endpoints include:
 
@@ -86,7 +86,7 @@ Authentication is required for write operations and is handled via API keys. Rea
 
 ### 2. Python Client Integration
 
-For Python applications, the [DANDI Python client](https://github.com/dandi/dandi-cli) provides a convenient way to interact with the {{ instance.name }} Archive:
+For Python applications, the [{{ instance.name }} Python client](https://github.com/dandi/dandi-cli) provides a convenient way to interact with the {{ instance.name }} Archive:
 
 ```python
 from dandi.dandiapi import DandiAPIClient
@@ -109,7 +109,7 @@ asset.download("local_file.nwb")
 
 ### 3. WebDAV Integration
 
-DANDI provides a [WebDAV](https://en.wikipedia.org/wiki/WebDAV) service at https://webdav.dandiarchive.org/ that allows external services to access {{ instance.name }} data using standard WebDAV clients:
+{{ instance.name }} provides a [WebDAV](https://en.wikipedia.org/wiki/WebDAV) service at https://webdav.dandiarchive.org/ that allows external services to access {{ instance.name }} data using standard WebDAV clients:
 
 ```python
 import requests
@@ -120,7 +120,7 @@ response = requests.get("https://webdav.dandiarchive.org/dandisets/000123/draft/
 
 ### 4. Custom Visualization Services
 
-To integrate a custom visualization service with DANDI:
+To integrate a custom visualization service with {{ instance.name }}:
 
 1. Create a service that can accept a URL to an NWB file
 2. Register your service with the {{ instance.name }} team
@@ -130,8 +130,8 @@ For example, NWB Explorer is integrated this way, allowing users to visualize NW
 
 ## Getting Help
 
-If you need assistance integrating your service with DANDI, you can:
+If you need assistance integrating your service with {{ instance.name }}, you can:
 
-1. Open an issue on the [DANDI helpdesk](https://github.com/dandi/helpdesk/issues)
-2. Contact the {{ instance.name }} team at help@dandiarchive.org
+1. Open an issue on the [{{ instance.name }} helpdesk](https://github.com/dandi/helpdesk/issues)
+2. Contact the {{ instance.name }} team at help@{{ instance.domain }}
 3. Join the {{ instance.name }} Slack workspace (available to registered {{ instance.name }} users)

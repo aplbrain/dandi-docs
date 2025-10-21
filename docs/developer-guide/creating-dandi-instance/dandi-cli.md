@@ -3,7 +3,7 @@ The {{ instance.name }} Client provides both a command line interface (CLI) and 
 
 ## Update the {{ instance.name }} Client to reference your API
 
-To reference your DANDI-clone API, [update the URLs reference per each CLI action](https://github.com/dandi/dandi-cli/blob/15196a93310618f8897c7b43444e216bbb094549/dandi/consts.py#L119-L135) and push a PR to the [dandi-cli GitHub repository](https://github.com/dandi/dandi-cli).
+To reference your {{ instance.name }}-clone API, [update the URLs reference per each CLI action](https://github.com/dandi/dandi-cli/blob/15196a93310618f8897c7b43444e216bbb094549/dandi/consts.py#L119-L135) and push a PR to the [dandi-cli GitHub repository](https://github.com/dandi/dandi-cli).
 
 Here is an [example PR](https://github.com/dandi/dandi-cli/pull/1527) of another clone adding to the available instances of `DandiInstance` objects in the `dandi-cli`.
 
@@ -14,7 +14,7 @@ known_instances = {
     "dandi": DandiInstance(
         "dandi",
         "{{ instance.uri }}",
-        "https://api.dandiarchive.org/api",
+        "{{ instance.api }}/api",
     ),
     "dandi-sandbox": DandiInstance(
         "dandi-sandbox",

@@ -7,7 +7,7 @@
   agreements for data collected from human subjects.
 - **Status of research data:** Empirical (not simulated) data and associated metadata from any stage of the
   research study's life cycle is accepted.  Simulated data is handled on a case-by-case basis, contact the {{ instance.name }} team 
-- **Eligible users:** Anyone working with the data in the scope of the archive may register as a user of DANDI. All users are
+- **Eligible users:** Anyone working with the data in the scope of the archive may register as a user of {{ instance.name }}. All users are
   allowed to deposit content for which they possess the appropriate rights
   and which falls within the **scope** of the archive.
 - **Ownership:** By uploading content, no change of ownership is implied and no

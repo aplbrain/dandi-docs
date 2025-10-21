@@ -1,12 +1,12 @@
 # Using the {{ instance.name }} Hub
 
-[DANDI Hub](http://hub.dandiarchive.org) is a [JupyterHub](https://jupyterhub.readthedocs.io) instance in the cloud to interact with the data stored in DANDI, and is free to use for exploratory analysis of data on DANDI.
+[{{ instance.name }} Hub](http://hub.dandiarchive.org) is a [JupyterHub](https://jupyterhub.readthedocs.io) instance in the cloud to interact with the data stored in {{ instance.name }}, and is free to use for exploratory analysis of data on {{ instance.name }}.
 For instructions on how to navigate JupyterHub see this [YouTube tutorial](https://www.youtube.com/watch?v=5pf0_bpNbkw&t=09m20s).
 Note that {{ instance.name }} Hub is not intended for significant computation, but provides a place to introspect Dandisets and to perform some analysis and visualization of data.
 
 ## Registration
 
-To use the [DANDI Hub](http://hub.dandiarchive.org), you must first register for an account using the [DANDI website](http://dandiarchive.org).
+To use the [{{ instance.name }} Hub](http://hub.dandiarchive.org), you must first register for an account using the [{{ instance.name }} website](http://{{ instance.domain }}).
 See the [Create a {{ instance.name }} Account](../getting-started/creating-account.md) page.
 
 ## Choosing a server option
@@ -21,7 +21,7 @@ A "Base (MATLAB)" server is also available, which provides a MATLAB cloud instal
 
 ## Using conda environments
 
-DANDI Hub provides two ways to work with Python environments: shared environments managed through conda-store, and individual environments you create with conda in your home directory.
+{{ instance.name }} Hub provides two ways to work with Python environments: shared environments managed through conda-store, and individual environments you create with conda in your home directory.
 
 **Shared environments** are managed through conda-store and are available to all {{ instance.name }} Hub users.
 These environments contain commonly used packages for neurophysiology analysis and are maintained by administrators.
@@ -121,7 +121,7 @@ If you need additional software installed in the image, you can add a server ima
 docker build -f "$(CONTAINERFILE)" -t dandihub-dev:latest .
 docker run --rm -p 8888:8888 --name dev_jupyterlab dandihub-dev:latest start-notebook.sh --NotebookApp.token=""
 ```
-4. Add the Dockerfile to the `include` matrix of both the [docker-push.yaml](https://github.com/dandi/dandi-hub/blob/main/.github/workflows/docker-push.yaml) and [docker-test.yaml](https://github.com/dandi/dandi-hub/blob/main/.github/workflows/docker-test.yaml) files.  This will allow the image to be built when new pull requests are opened and pushed to the [DANDI Archive Docker Hub](https://hub.docker.com/u/dandiarchive) when the pull requests are merged. 
+4. Add the Dockerfile to the `include` matrix of both the [docker-push.yaml](https://github.com/dandi/dandi-hub/blob/main/.github/workflows/docker-push.yaml) and [docker-test.yaml](https://github.com/dandi/dandi-hub/blob/main/.github/workflows/docker-test.yaml) files.  This will allow the image to be built when new pull requests are opened and pushed to the [{{ instance.name }} Archive Docker Hub](https://hub.docker.com/u/dandiarchive) when the pull requests are merged. 
 5. Add the image to the server options by updating the [jupyterhub.yaml](https://github.com/dandi/dandi-hub/blob/main/envs/shared/jupyterhub.yaml) file.
 
 ## Example notebooks

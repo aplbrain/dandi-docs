@@ -1,6 +1,6 @@
 # Developer Notes
 
-This page contains important information for anyone starting development work on the DANDI
+This page contains important information for anyone starting development work on the {{ instance.name }}
 project.
 
 ## Overview
@@ -128,12 +128,12 @@ those previews.
 
 ## Email Services
 
-DANDI Archive maintains several email services to implement the following
+{{ instance.name }} Archive maintains several email services to implement the following
 facilities:
 
 - **Public email.** Users of the Archive can reach the developers for help or to
-  report problems by sending email to info@dandiarchive.org and
-  help@dandiarchive.org. These are "virtual" email addresses managed by DNS
+  report problems by sending email to info@{{ instance.domain }} and
+  help@{{ instance.domain }}. These are "virtual" email addresses managed by DNS
   entries.
 - **Transactional email.** The Archive sends email to users to manage the signup
   process and to inform about special situations such as long running operations, 
@@ -147,7 +147,7 @@ facilities:
 
 ### DNS Entries for public email addresses
 
-The email addresses info@dandiarchive.org and help@dandiarchive.org are
+The email addresses info@{{ instance.domain }} and help@{{ instance.domain }} are
 advertised to users as general email addresses to use to ask for information or
 help. These are managed via Terraform as AWS Route 53 MX entries. We use
 [ImprovMX](https://improvmx.com/) to forward emails sent to these addresses to
@@ -228,14 +228,14 @@ To log into the production Django admin panel, you must simply be logged into
 the {{ instance.name }} Archive production instance using an admin account.
 
 However, at times the Django admin panel login seems to expire while the login
-to {{ instance.name }} Archive proper is still live. In this case, simply log out of DANDI,
+to {{ instance.name }} Archive proper is still live. In this case, simply log out of {{ instance.name }},
 log back in, and then go to the Django admin panel URL
-(e.g. https://api.dandiarchive.org/admin) and you should be logged back in
+(e.g. {{ instance.api }}/admin) and you should be logged back in
 there.
 
 ### Why do incoming emails to dandiarchive.org look crazy?
 
-When a user emails help@dandiarchive.org or info@dandiarchive.org, those
+When a user emails help@{{ instance.domain }} or info@{{ instance.domain }}, those
 messages are forwarded to dandi@mit.edu (see [above](#email-services)) so that the
 dev team sees them. However, these emails arrive with a long, spammy-looking
 From address with a Heroku DNS domain; this seems to be an artifact of how

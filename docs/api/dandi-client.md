@@ -56,7 +56,7 @@ dandi validate path/to/files
 # Organize data for upload
 dandi organize path/to/files
 
-# Upload data to DANDI
+# Upload data to {{ instance.name }}
 dandi upload
 ```
 
