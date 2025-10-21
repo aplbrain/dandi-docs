@@ -18,7 +18,7 @@ NWB files. The NWB Inspector will print out all warnings, but only `CRITICAL` wa
 uploaded to DANDI. Errors in NWB Inspector will be block upload as well, but reflect a problem with the NWB 
 Inspector software as opposed to the NWB file. 
 
-## Missing DANDI Metadata
+## Missing {{ instance.name }} Metadata
 DANDI has requirements for metadata beyond what is strictly required for NWB validation. The following metadata must 
 be present in the NWB file for a successful upload to DANDI:
 

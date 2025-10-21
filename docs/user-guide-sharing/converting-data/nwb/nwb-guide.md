@@ -19,14 +19,14 @@ This tool is particularly useful for users who prefer a graphical interface over
 
 2. **Converting Data**: NWB GUIDE supports conversion from various formats. See the [NWB GUIDE tutorials](https://nwb-guide.readthedocs.io/en/stable/tutorials/index.html) for details.
 
-3. **Dataset Publication**: The [Dataset Publication Tutorial](https://nwb-guide.readthedocs.io/en/latest/tutorials/dataset_publication.html) provides step-by-step instructions for publishing data to DANDI using NWB GUIDE.
+3. **Dataset Publication**: The [Dataset Publication Tutorial](https://nwb-guide.readthedocs.io/en/latest/tutorials/dataset_publication.html) provides step-by-step instructions for publishing data to {{ instance.name }} using NWB GUIDE.
 
 ## Key Features
 
 - **Intuitive Interface**: Easy-to-use graphical interface for managing the entire workflow from conversion to publication.
 - **Format Support**: Supports conversion from many common neurophysiology data formats.
 - **Validation**: Built-in validation to ensure your NWB files meet DANDI's requirements.
-- **DANDI Integration**: Direct upload to DANDI without needing to use the command line.
+- **DANDI Integration**: Direct upload to {{ instance.name }} without needing to use the command line.
 
 ## When to Use NWB GUIDE
 

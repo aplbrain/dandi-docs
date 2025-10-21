@@ -18,6 +18,6 @@ DANDI is designed to work seamlessly with NWB files. When you upload NWB files t
 
 1. The files are validated to ensure they conform to the NWB standard
 2. Metadata is automatically extracted to make your data more discoverable
-3. The data can be accessed programmatically through the DANDI API
+3. The data can be accessed programmatically through the {{ instance.name }} API
 
 For more information on validating NWB files for DANDI, see the [Validating NWB Files](../../user-guide-sharing/validating-files.md) section.

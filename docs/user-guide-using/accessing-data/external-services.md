@@ -1,6 +1,6 @@
 # External Services
 
-DANDI integrates with various external services to enhance data accessibility and analysis capabilities. This page describes the external services that can be used with DANDI data.
+DANDI integrates with various external services to enhance data accessibility and analysis capabilities. This page describes the external services that can be used with {{ instance.name }} data.
 
 ## NWB Explorer
 
@@ -8,7 +8,7 @@ DANDI integrates with various external services to enhance data accessibility an
 
 ### Using NWB Explorer with DANDI
 
-1. Navigate to a Dandiset on the DANDI Archive
+1. Navigate to a Dandiset on the {{ instance.name }} Archive
 2. Browse to an NWB file
 3. Look for the "Open with NWB Explorer" link next to the file
 4. Click the link to open the file in NWB Explorer
@@ -26,7 +26,7 @@ NWB Explorer allows you to:
 
 ### Using Neurosift with DANDI
 
-1. Navigate to a Dandiset on the DANDI Archive
+1. Navigate to a Dandiset on the {{ instance.name }} Archive
 2. Browse to an NWB file
 3. Look for the "Open with Neurosift" link next to the file
 4. Click the link to open the file in Neurosift
@@ -47,4 +47,4 @@ DANDI provides a [REST API](https://api.dandiarchive.org/swagger) that can be us
 - Download assets
 - And more
 
-For more information on the DANDI API, see the [API documentation](../../api/rest-api.md).
+For more information on the {{ instance.name }} API, see the [API documentation](../../api/rest-api.md).

@@ -1,10 +1,10 @@
 # Initialize Vendor Accounts
 
-The DANDI ecosystem relies on vendor services to operate.  So first you will need to set up accounts with the following vendors:
+The {{ instance.name }} ecosystem relies on vendor services to operate.  So first you will need to set up accounts with the following vendors:
 
 - **Heroku**: Provisions the API components.
-- **AWS**: Provides storage buckets (S3), as well as domain management (Route53), for resources across the DANDI ecosystem. As well as the services (EC2, Kubernetes, etc.) for deploying the JupyterHub.
-- **GitHub**: Serves as the authentication provider for accounts across the DANDI ecosystem.
+- **AWS**: Provides storage buckets (S3), as well as domain management (Route53), for resources across the {{ instance.name }} ecosystem. As well as the services (EC2, Kubernetes, etc.) for deploying the JupyterHub.
+- **GitHub**: Serves as the authentication provider for accounts across the {{ instance.name }} ecosystem.
 - **Terraform Cloud**: Manages provisioned resources across cloud vendors in a version-controlled manner. 
 - **Netlify**: Deploys production frontend build, as well as staging previews to assist with frontend development.
 - **Sentry**: Provides observability and monitoring for API events.
@@ -181,7 +181,7 @@ style="width: 60%; height: auto; display: block; margin-left: auto;  margin-righ
 
 ## GitHub
 
-You'll need to create a GitHub Organization where you can fork the DANDI repositories. [See here for documentation to create a GitHub organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch)
+You'll need to create a GitHub Organization where you can fork the {{ instance.name }} repositories. [See here for documentation to create a GitHub organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch)
 
 ##### Initialize your OAuth App
 
@@ -358,7 +358,7 @@ alt="retrieve"
 style="width: 60%; height: auto; display: block; margin-left: auto;  margin-right: auto;"/>
 <br/><br/>
 
-For usage of Netlify, one could refer to declaring a `netlify.toml` configuration file [like the one referenced in DANDI Archive](https://github.com/dandi/dandi-archive/blob/master/web/netlify.toml)
+For usage of Netlify, one could refer to declaring a `netlify.toml` configuration file [like the one referenced in {{ instance.name }} Archive](https://github.com/dandi/dandi-archive/blob/master/web/netlify.toml)
 
 These values can also be replicated in the settings. 
 
@@ -369,10 +369,10 @@ alt="retrieve"
 style="width: 60%; height: auto; display: block; margin-left: auto;  margin-right: auto;"/>
 <br/><br/>
 
-Your frontend should be able to deploy to an auto-generated URL via Netlify now! Steps for domain management and configuration are described further in the [Frontend Deployment](./dandi-archive.md#frontend-deployment) section within the DANDI Archive setup.
+Your frontend should be able to deploy to an auto-generated URL via Netlify now! Steps for domain management and configuration are described further in the [Frontend Deployment](./dandi-archive.md#frontend-deployment) section within the {{ instance.name }} Archive setup.
 ## Sentry
 
-[Sentry](https://sentry.io/) is a monitoring tool used for the DANDI Archive API. It is integral in order to notify engineers if a system is down, experiencing poor performance, or may have unwanted users.
+[Sentry](https://sentry.io/) is a monitoring tool used for the {{ instance.name }} Archive API. It is integral in order to notify engineers if a system is down, experiencing poor performance, or may have unwanted users.
 
 Begin by creating a Sentry account -- once successful, you'll start by creating a new Project:
 

@@ -4,10 +4,10 @@ This page provides a high-level view of how DANDI's core components fit together
 
 ## The Big Picture
 
-The DANDI platform is essentially composed of:
+The {{ instance.name }} platform is essentially composed of:
 
 1. **Storage**: S3 buckets (AWS) where data actually resides.
-2. **API**: A Django/Resonant-based backend application (hosted on Heroku) that handles the DANDI data model, user authentication, and orchestrates S3 interactions.
+2. **API**: A Django/Resonant-based backend application (hosted on Heroku) that handles the {{ instance.name }} data model, user authentication, and orchestrates S3 interactions.
 3. **Frontend**: A Vue-based web application (hosted on Netlify) for users to browse, search, and manage data in the archive.
 4. **Workers**: Celery workers (also on Heroku) for asynchronous tasks such as file checksum calculations, analytics, and housekeeping.
 5. **Observability**: Log aggregation and alerting (Heroku logs), plus Sentry for error-tracking and notifications.
@@ -23,7 +23,7 @@ style="width: 90%; height: auto; display: block; margin-left: auto;  margin-righ
 * The user (or script) interacts with the **Web UI** or the **DANDI CLI**.
 * The **Web UI** calls into the **API** (over HTTPS).
 * The **API** queries or updates metadata in its Postgres DB (hosted on Heroku).
-* The **API** calls AWS S3 to read/write DANDI assets.
+* The **API** calls AWS S3 to read/write {{ instance.name }} assets.
 * Certain heavy-lift or background tasks get queued into Celery tasks, handled by the **Workers**.
 * Domain names, certificates, and load-balancing records are handled by AWS Route 53 or Netlify's DNS, depending on whether it's the API subdomain or the apex domain for the UI.
 * Large chunks of data can be streamed from S3 directly to the Client via presigned URLs.
@@ -51,7 +51,7 @@ Provisions the servers, worker processes, and the database for the API.
 
 ### 3. Netlify (UI)
 
-* **Frontend server**: Serves a static build of the DANDI Archive frontend (Vue.js).
+* **Frontend server**: Serves a static build of the {{ instance.name }} Archive frontend (Vue.js).
 * **Autodeployment**: On each push or merge to `main` (or whichever branch is configured), Netlify automatically builds and deploys.
 * **Configuration**:
   - **`netlify.toml`**: Describes build commands, environment variables for sandbox vs. production.

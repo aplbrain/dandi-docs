@@ -1,6 +1,6 @@
 # Uploading Data
 
-This page provides instructions for uploading data to DANDI after you have [created a Dandiset](./creating-dandiset.md) and [converted your data to NWB format](./converting-data/index.md).
+This page provides instructions for uploading data to {{ instance.name }} after you have [created a Dandiset](./creating-dandiset.md) and [converted your data to NWB format](./converting-data/index.md).
 
 ## Prerequisites
 
@@ -30,13 +30,13 @@ DANDI provides two main methods for uploading data:
 
 The NWB GUIDE provides a graphical interface for uploading data to DANDI. See the [NWB GUIDE Dataset Publication Tutorial](https://nwb-guide.readthedocs.io/en/latest/tutorials/dataset_publication.html) for more information.
 
-### 2. Using the DANDI CLI
+### 2. Using the {{ instance.name }} CLI
 
-For command-line users or those with larger datasets, the DANDI CLI provides a powerful way to upload data:
+For command-line users or those with larger datasets, the {{ instance.name }} CLI provides a powerful way to upload data:
 
 1. **Download the Dandiset locally**
    ```bash
-   dandi download https://dandiarchive.org/dandiset/<dataset_id>/draft
+   dandi download {{ instance.uri }}/dandiset/<dataset_id>/draft
    cd <dataset_id>
    ```
 2. **Organize your data** (skip this step if you are preparing a proper [BIDS dataset](https://bids.neuroimaging.io/) with e.g. OME-Zarr, NWB and other files):
@@ -59,11 +59,11 @@ For command-line users or those with larger datasets, the DANDI CLI provides a p
 
 ## Storing Access Credentials
 
-There are two options for storing your DANDI access credentials:
+There are two options for storing your {{ instance.name }} access credentials:
 
 ### 1. `DANDI_API_KEY` Environment Variable
 
-- By default, the DANDI CLI looks for an API key in the `DANDI_API_KEY` environment variable. To set this on Linux or macOS, run:
+- By default, the {{ instance.name }} CLI looks for an API key in the `DANDI_API_KEY` environment variable. To set this on Linux or macOS, run:
 
   ```bash
   export DANDI_API_KEY=personal-key-value
@@ -94,7 +94,7 @@ If you encounter issues during the upload process:
 If you continue to have issues, please reach out via the [DANDI Help Desk](https://github.com/dandi/helpdesk/discussions).
 
 
-## Debugging the DANDI CLI
+## Debugging the {{ instance.name }} CLI
 
 If something goes wrong while using the Python CLI client, the
 first place to check for more information so that you can [file a quality bug

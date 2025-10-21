@@ -1,10 +1,10 @@
 # REST API
 
-The DANDI Archive provides a RESTful API that allows programmatic access to the archive. The API is documented using both Swagger and ReDoc, which provide interactive interfaces for exploring and testing the API.
+The {{ instance.name }} Archive provides a RESTful API that allows programmatic access to the archive. The API is documented using both Swagger and ReDoc, which provide interactive interfaces for exploring and testing the API.
 
 ## Accessing the API
 
-The DANDI API is available at:
+The {{ instance.name }} API is available at:
 
 - Production: [https://api.dandiarchive.org/](https://api.dandiarchive.org/)
 - Sandbox: [https://api.sandbox.dandiarchive.org/](https://api.sandbox.dandiarchive.org/)
@@ -43,9 +43,9 @@ The ReDoc interface provides:
 
 ## Authentication
 
-Some API endpoints require authentication. You can authenticate using an API key, which you can obtain from your DANDI account. To use the API key:
+Some API endpoints require authentication. You can authenticate using an API key, which you can obtain from your {{ instance.name }} account. To use the API key:
 
-1. Log in to the DANDI Archive
+1. Log in to the {{ instance.name }} Archive
 2. Click on your user initials in the top-right corner
 3. Copy your API key
 4. Use the API key in the `Authorization` header of your requests:

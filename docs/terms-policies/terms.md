@@ -1,12 +1,12 @@
 # Terms of Use v1.0.1
 
-The DANDI data archive ("DANDI") is offered by the DANDI project as part of its
+The {{ instance.name }} data archive ("DANDI") is offered by the {{ instance.name }} project as part of its
 mission to make available the results of its work.
 
 Use of DANDI, both the uploading and downloading of data, denotes agreement with
 the following terms:
 
-1. DANDI is an open dissemination research data repository for the preservation
+1. {{ instance.name }} is an open dissemination research data repository for the preservation
    and making available of research, educational and informational content. Access
    to DANDI's content is open to all.
 
@@ -15,7 +15,7 @@ the following terms:
    access to an organized data center.
 
 1. The uploader is exclusively responsible for the content that they upload to
-   DANDI and shall indemnify and hold the DANDI team free and harmless in
+   {{ instance.name }} and shall indemnify and hold the {{ instance.name }} team free and harmless in
    connection with their use of the service. The uploader shall ensure that their
    content is suitable for open dissemination, and that it complies with these
    terms and applicable laws, including, but not limited to, privacy, data
@@ -26,30 +26,30 @@ the following terms:
 
 1. Access to DANDI, and all content, is provided on an "as-is" basis. Users of
    content ("Users") shall respect applicable license conditions. Download and
-   use of content from DANDI does not transfer any intellectual property rights
+   use of content from {{ instance.name }} does not transfer any intellectual property rights
    in the content to the User.
 
 1. Users are exclusively responsible for their use of content, and shall indemnify
-   and hold the DANDI team free and harmless in connection with their download
-   and/or use. Hosting and making content available through DANDI does not
-   represent any approval or endorsement of such content by the DANDI team.
+   and hold the {{ instance.name }} team free and harmless in connection with their download
+   and/or use. Hosting and making content available through {{ instance.name }} does not
+   represent any approval or endorsement of such content by the {{ instance.name }} team.
 
-1. The DANDI team reserves the right, without notice, at its sole discretion and
+1. The {{ instance.name }} team reserves the right, without notice, at its sole discretion and
    without liability, (i) to alter, delete or block access to content that it
    deems to be inappropriate or insufficiently protected, and (ii) to restrict
-   or remove User access where it considers that use of DANDI interferes with
+   or remove User access where it considers that use of {{ instance.name }} interferes with
    its operations or violates these Terms of Use or applicable laws.
 
-1. Unless specified otherwise, DANDI metadata may be freely reused under the
+1. Unless specified otherwise, {{ instance.name }} metadata may be freely reused under the
    [CC0 waiver](https://creativecommons.org/publicdomain/zero/1.0/).
 
-1. These Terms of Use are subject to change by the DANDI team at any time and
+1. These Terms of Use are subject to change by the {{ instance.name }} team at any time and
    without notice, other than through posting the updated Terms of Use on the
-   DANDI website.
+   {{ instance.name }} website.
 
-* Uploaders considering DANDI for the storage of unanonymized or encrypted/unencrypted
+* Uploaders considering {{ instance.name }} for the storage of unanonymized or encrypted/unencrypted
   sensitive personal data are advised to use bespoke platforms rather than open
-  dissemination services like DANDI for sharing their data.
+  dissemination services like {{ instance.name }} for sharing their data.
 
 [1] [2] See further the user pages regarding uploading for information on anonymization
 of datasets that contain sensitive personal information.

@@ -5,18 +5,18 @@ project.
 
 ## Overview
 
-The DANDI archive dev environment comprises three major pieces of software:
+The {{ instance.name }} archive dev environment comprises three major pieces of software:
 `dandi-archive`, `dandi-cli`, and `dandi-schema`.
 
 ### `dandi-archive`
 [`dandi-archive`](https://github.com/dandi/dandi-archive) is the web frontend
-application; it connects to `dandi-api` and provides a user interface to all the DANDI functionality. 
+application; it connects to `dandi-api` and provides a user interface to all the {{ instance.name }} functionality. 
 `dandi-archive` is a standard web application built with
 `yarn`. See the [`dandi-archive` README](https://github.com/dandi/dandi-archive#readme)
 for instructions on how to build it locally.
 
 The Django application makes use of several services
-to provide essential function for the DANDI REST API, including Postgres (to hold
+to provide essential function for the {{ instance.name }} REST API, including Postgres (to hold
 administrative data about the web application itself), Celery (to run
 asynchronous compute tasks as needed to implement API semantics), and RabbitMQ
 (to act as a message broker between Celery and the rest of the application).
@@ -37,7 +37,7 @@ following the instructions in the [`dandi-cli` README](https://github.com/dandi/
 ### `dandi-schema`
 
 [`dandi-schema`](https://github.com/dandi/dandi-schema) is a Python library for 
-creating, maintaining, and validating the DANDI metadata models for dandisets 
+creating, maintaining, and validating the {{ instance.name }} metadata models for dandisets 
 and assets. You may need to make use of this tool when improving models, or 
 migrating metadata. You can install `dandi-schema` with a command like 
 `pip install dandi-schema`. When releases are published through dandi-schema, 
@@ -47,10 +47,10 @@ viewing the schemas.
 ## Technologies Used
 
 This section details some foundational technologies used in `dandi-archive`. Some basic understanding of these technologies is the bare minimum
-requirement for contributing meaningfully, but keep in mind that the DANDI team
+requirement for contributing meaningfully, but keep in mind that the {{ instance.name }} team
 can help you get spun up as well.
 
-**JavaScript/TypeScript.** The DANDI archive code is a standard JavaScript web
+**JavaScript/TypeScript.** The {{ instance.name }} archive code is a standard JavaScript web
 application, but we try to implement new functionality using TypeScript.
 
 **Vue/VueX.** The application's components are written in Vue, and global
@@ -70,14 +70,14 @@ For general help with `dandi-archive`, contact @waxlamp.
 
 ## Deployment
 
-The DANDI project uses automated services to continuously deploy both the
+The {{ instance.name }} project uses automated services to continuously deploy both the
 `dandi-api` backend and the `dandi-archive` frontend.
 
 Heroku manages backend deployment automatically from the `master` branch of the
 `dandi-api` repository. For this reason it is important that pull requests pass
 all CI tests before they are merged. Heroku configuration is in turn managed by
 Terraform code stored in the `dandi-infrastructure` repository. If you need
-access to the Heroku DANDI organization, talk to @satra.
+access to the Heroku {{ instance.name }} organization, talk to @satra.
 
 Netlify manages the frontend deployment process. Similarly to `dandi-api`, these
 deployments are based on the `master` branch of `dandi-archive`. The
@@ -90,10 +90,10 @@ speak to @satra.
 
 ### Service(s) status
 
-The DANDI project uses [upptime](https://upptime.js.org/) to monitor the status of DANDI provided and third-party services.
+The {{ instance.name }} project uses [upptime](https://upptime.js.org/) to monitor the status of {{ instance.name }} provided and third-party services.
 The configuration is available in [.upptimerc.yml](https://github.com/dandi/upptime/blob/master/.upptimerc.yml) of the https://github.com/dandi/upptime repository, which is automatically updated by the upptime project pipelines.
 Upptime automatically opens new issues if any service becomes unresponsive, and closes issues whenever service comes back online.
-https://www.dandiarchive.org/upptime/ is the public dashboard for the status of DANDI services.
+https://www.dandiarchive.org/upptime/ is the public dashboard for the status of {{ instance.name }} services.
 
 ## Logging
 
@@ -112,7 +112,7 @@ Moreover, `heroku logs` processes per app dump logs to `/mnt/backup/dandi/heroku
 
 ### Continuous Integration (CI) Jobs
 
-The DANDI project uses GitHub Actions for continuous integration.
+The {{ instance.name }} project uses GitHub Actions for continuous integration.
 Logs for many of the repositories are archived on `drogon` server at `/mnt/backup/dandi/tinuous-logs/`.
 
 ## Code Hosting
@@ -172,15 +172,15 @@ regulations.
 Our major use case for mass email is to notify the userbase of upcoming downtime
 (as is needed for, e.g., a major data migration or maintenance windows).
 
-If you need to mass email the DANDI Archive userbase, speak to Roni Choudhury
+If you need to mass email the {{ instance.name }} Archive userbase, speak to Roni Choudhury
 (<roni.choudhury@kitware.com>).
 
-#### Updating the DANDI userbase audience in Mailchimp
+#### Updating the {{ instance.name }} userbase audience in Mailchimp
 
 Follow these steps before sending a mass email through Mailchimp to ensure that
-the Mailchimp-maintained DANDI userbase audience is up to date.
+the Mailchimp-maintained {{ instance.name }} userbase audience is up to date.
 
-1. Log into the DANDI admin panel and navigate to the dashboard page (at, e.g.,
+1. Log into the {{ instance.name }} admin panel and navigate to the dashboard page (at, e.g.,
    `api.dandiarchive.org/dashboard`).
 2. Click on the `Mailchimp CSV` link in the navbar to download the CSV file to
    disk.
@@ -225,10 +225,10 @@ you are setting up the superuser during initial setup.
 ### Refresh GitHub login to log into prod Django admin panel
 
 To log into the production Django admin panel, you must simply be logged into
-the DANDI Archive production instance using an admin account.
+the {{ instance.name }} Archive production instance using an admin account.
 
 However, at times the Django admin panel login seems to expire while the login
-to DANDI Archive proper is still live. In this case, simply log out of DANDI,
+to {{ instance.name }} Archive proper is still live. In this case, simply log out of DANDI,
 log back in, and then go to the Django admin panel URL
 (e.g. https://api.dandiarchive.org/admin) and you should be logged back in
 there.

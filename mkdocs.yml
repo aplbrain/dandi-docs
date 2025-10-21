@@ -112,6 +112,7 @@ plugins:
   - mkdocs-jupyter:
       ignore_h1_titles: True
       include: ["*.ipynb"]
+  - macros
 
 # Customize theme
 extra:
@@ -135,3 +136,6 @@ extra:
     - icon: fontawesome/brands/bluesky
       link: https://bsky.app/profile/dandiarchive.org
       name: Bluesky
+  instance:
+    name: DANDI
+    uri: https://dandiarchive.org

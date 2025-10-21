@@ -65,4 +65,4 @@ It is highly recommended to add links to the following resources (if they exist)
   * The public code repository used to convert the data
   * A data analysis library associated with the publication that can take this data as input
   * An example notebook submitted to http://github.com/dandi/example-notebooks that demonstrates how to use the data
-  * Associated datasets published on DANDI or on other archives.
+  * Associated datasets published on {{ instance.name }} or on other archives.

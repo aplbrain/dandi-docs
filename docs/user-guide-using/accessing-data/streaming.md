@@ -1,6 +1,6 @@
 # Streaming Data
 
-Streaming data allows you to access and analyze DANDI data without downloading entire files. This is particularly useful for large datasets where downloading the complete files would be impractical.
+Streaming data allows you to access and analyze {{ instance.name }} data without downloading entire files. This is particularly useful for large datasets where downloading the complete files would be impractical.
 
 ## Streaming Methods
 
@@ -12,7 +12,7 @@ Using Python, you can set up data streaming using remfile, fsspec, or ros3. See 
 
 ### 2. DataLad FUSE Mount
 
-[DataLad FUSE](https://github.com/datalad/datalad-fuse/) allows you to mount DANDI datasets as if they were local files, with data being streamed on-demand when accessed.
+[DataLad FUSE](https://github.com/datalad/datalad-fuse/) allows you to mount {{ instance.name }} datasets as if they were local files, with data being streamed on-demand when accessed.
 
 ```bash
 # Install DataLad and DataLad FUSE

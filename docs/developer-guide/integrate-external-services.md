@@ -1,14 +1,14 @@
 # Integrate External Services with DANDI
 
-This page provides guidance on how to integrate external services with the DANDI Archive, including how to work with DANDI metadata models and APIs.
+This page provides guidance on how to integrate external services with the {{ instance.name }} Archive, including how to work with {{ instance.name }} metadata models and APIs.
 
-## DANDI Metadata Models Integration
+## {{ instance.name }} Metadata Models Integration
 
 **DANDI metadata models** are defined as 
 [Pydantic models](https://github.com/dandi/dandi-schema/blob/master/dandischema/models.py)
 in [**dandischema**](https://github.com/dandi/dandi-schema) and transformed into 
 [JSON schemas](https://github.com/dandi/schema). **Both** representations — 
-the original Pydantic definitions and JSON schemas — are used across the DANDI ecosystem. 
+the original Pydantic definitions and JSON schemas — are used across the {{ instance.name }} ecosystem. 
 The diagram below outlines how these two representations are integrated into various 
 components, including the CLI, the backend/API, and the web interface.
 
@@ -70,7 +70,7 @@ There are several ways to integrate external services with DANDI:
 
 ### 1. REST API Integration
 
-The DANDI Archive provides a comprehensive REST API that allows external services to interact with the archive programmatically. The API documentation is available at:
+The {{ instance.name }} Archive provides a comprehensive REST API that allows external services to interact with the archive programmatically. The API documentation is available at:
 
 - [Swagger UI](https://api.dandiarchive.org/swagger)
 - [ReDoc](https://api.dandiarchive.org/redoc)
@@ -86,7 +86,7 @@ Authentication is required for write operations and is handled via API keys. Rea
 
 ### 2. Python Client Integration
 
-For Python applications, the [DANDI Python client](https://github.com/dandi/dandi-cli) provides a convenient way to interact with the DANDI Archive:
+For Python applications, the [DANDI Python client](https://github.com/dandi/dandi-cli) provides a convenient way to interact with the {{ instance.name }} Archive:
 
 ```python
 from dandi.dandiapi import DandiAPIClient
@@ -109,7 +109,7 @@ asset.download("local_file.nwb")
 
 ### 3. WebDAV Integration
 
-DANDI provides a [WebDAV](https://en.wikipedia.org/wiki/WebDAV) service at https://webdav.dandiarchive.org/ that allows external services to access DANDI data using standard WebDAV clients:
+DANDI provides a [WebDAV](https://en.wikipedia.org/wiki/WebDAV) service at https://webdav.dandiarchive.org/ that allows external services to access {{ instance.name }} data using standard WebDAV clients:
 
 ```python
 import requests
@@ -123,15 +123,15 @@ response = requests.get("https://webdav.dandiarchive.org/dandisets/000123/draft/
 To integrate a custom visualization service with DANDI:
 
 1. Create a service that can accept a URL to an NWB file
-2. Register your service with the DANDI team
-3. DANDI will add a link to your service next to compatible files in the web interface
+2. Register your service with the {{ instance.name }} team
+3. {{ instance.name }} will add a link to your service next to compatible files in the web interface
 
-For example, NWB Explorer is integrated this way, allowing users to visualize NWB files directly from the DANDI web interface.
+For example, NWB Explorer is integrated this way, allowing users to visualize NWB files directly from the {{ instance.name }} web interface.
 
 ## Getting Help
 
 If you need assistance integrating your service with DANDI, you can:
 
 1. Open an issue on the [DANDI helpdesk](https://github.com/dandi/helpdesk/issues)
-2. Contact the DANDI team at help@dandiarchive.org
-3. Join the DANDI Slack workspace (available to registered DANDI users)
+2. Contact the {{ instance.name }} team at help@dandiarchive.org
+3. Join the {{ instance.name }} Slack workspace (available to registered {{ instance.name }} users)
