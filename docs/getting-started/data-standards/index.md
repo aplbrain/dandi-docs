@@ -1,15 +1,15 @@
 # Data Standards
-DANDI requires uploaded data to adhere to community data standards. 
+{{ instance.name }} requires uploaded data to adhere to community data standards. 
 These standards help data curators package all the necessary metadata and provide a uniform structure so that data can be more easily understood and reused by future users. 
-DANDI also leverages these standards to provide features like data validation and automatic metadata extraction and search.
-DANDI currently supports two data standards: 
+{{ instance.name }} also leverages these standards to provide features like data validation and automatic metadata extraction and search.
+{{ instance.name }} currently supports two data standards: 
 
 * For cellular neurophysiology, such as electrophysiology and optical physiology, use [Neurodata Without Borders (NWB)](https://www.nwb.org/nwb-neurophysiology/)
 * For neuroimaging data, such as MRI, use [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/)
 
 For microscopy data from immunostaining, we are using the [BIDS extension for microscopy](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/10-microscopy.html).
 
-To share data on DANDI, you will first need to convert your data to an appropriate standard.
+To share data on {{ instance.name }}, you will first need to convert your data to an appropriate standard.
 If you would like help determining which standard is most appropriate for your data, do not hesitate to reach out using the [dandi helpdesk](https://github.com/dandi/helpdesk/discussions/new) and we would be happy to assist.
 
 ## Neurodata Without Borders (NWB)

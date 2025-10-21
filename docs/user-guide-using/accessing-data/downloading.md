@@ -1,13 +1,13 @@
 # Downloading Data
 
-You can download the content of a Dandiset using the DANDI Web application (such a specific file) or entire
-Dandisets using the DANDI Python CLI.
+You can download the content of a Dandiset using the {{ instance.name }} Web application (such a specific file) or entire
+Dandisets using the {{ instance.name }} Python CLI.
 
-## Using the DANDI Web Application
+## Using the {{ instance.name }} Web Application
 
 Once you have the Dandiset you are interested in (see more in [Exploring Dandisets](../exploring-dandisets.md)), you can download the content of the Dandiset.
 On the landing page of each Dandiset, you can find `Download` button on the right-hand panel. After clicking the
-button, you will see the specific command you can use with DANDI Python CLI (as well as the information on how to download the CLI).
+button, you will see the specific command you can use with {{ instance.name }} Python CLI (as well as the information on how to download the CLI).
 
 <img
 src="../../../img/web_dandiset_rsp_download.jpg"
@@ -31,37 +31,37 @@ Each file in the Dandiset has a download icon next to it, clicking the icon will
 
 ## Using the Python CLI Client
 
-The [DANDI Python client](https://pypi.org/project/dandi/) gives you more options, such as downloading entire
+The [{{ instance.name }} Python client](https://pypi.org/project/dandi/) gives you more options, such as downloading entire
 Dandisets.
 
-**Before You Begin**: You need to have Python 3.9+ and install the DANDI Python Client using `pip install dandi`.
-If you have an issue using the DANDI Client, see the [DANDI Client docs](https://dandi.readthedocs.io).
+**Before You Begin**: You need to have Python 3.9+ and install the {{ instance.name }} Python Client using `pip install dandi`.
+If you have an issue using the {{ instance.name }} Client, see the [{{ instance.name }} Client docs](https://dandi.readthedocs.io).
 
 ### Download a Dandiset
-To download an entire Dandiset, you can use the same command as suggested by DANDI web application, e.g.:
+To download an entire Dandiset, you can use the same command as suggested by {{ instance.name }} web application, e.g.:
 
     dandi download DANDI:000023
 
 ### Download data for a specific subject from a Dandiset
 You can download data for specific subjects.
-Names of the subjects can be found on DANDI web application or by running a command with the DANDI CLI: `dandi ls -r
+Names of the subjects can be found on {{ instance.name }} web application or by running a command with the {{ instance.name }} CLI: `dandi ls -r
 DANDI:000023`.
 Once you have the subject ID, you can download the data, e.g.:
 
-    dandi download "https://api.dandiarchive.org/api/dandisets/000023/versions/draft/assets/?path=sub-811677083"
+    dandi download "{{ instance.api }}/api/dandisets/000023/versions/draft/assets/?path=sub-811677083"
 
 You could replace `draft` with a specific non-draft version you are interested in (e.g. `0.210914.1900` in the case of this Dandiset), if you are not interested in the latest, possibly different state of the Dandiset.
 
-You can also use the link from DANDI web application, e.g.:
+You can also use the link from {{ instance.name }} web application, e.g.:
 
-    dandi download "https://dandiarchive.org/dandiset/000023/0.210914.1900/files?location=sub-541516760"
+    dandi download "{{ instance.uri }}/dandiset/000023/0.210914.1900/files?location=sub-541516760"
 
 
 ### Download a specific file from a Dandiset
-You can download a specific file from a Dandiset when the link for the specific file can be found on the DANDI web
+You can download a specific file from a Dandiset when the link for the specific file can be found on the {{ instance.name }} web
 application, e.g.:
 
-    dandi download https://api.dandiarchive.org/api/dandisets/000023/versions/0.210914.1900/assets/1a93dc97-327d-4f9c-992d-c2149e7810ae/download/
+    dandi download {{ instance.api }}/api/dandisets/000023/versions/0.210914.1900/assets/1a93dc97-327d-4f9c-992d-c2149e7810ae/download/
 
 
 **Hint:** `dandi download` supports a number of [Resource Identifiers](https://dandi.readthedocs.io/en/latest/ref/urls.html#resource-ids) to point to a Dandiset, folder, or file.  Providing
@@ -70,7 +70,7 @@ an incorrect URL (e.g. `dandi download wrongurl`) will provide a list of support
 ### Download the `dandiset.yaml` file and a specific file within the directory tree of the Dandiset
 Now available in version `0.63.0` is the `--preserve-tree` option.
 In the command below, replace the `<dandiset-id>`, `<version>`, and asset `<path>`.
-The `<path>` can be found by selecting the `View asset metadata` icon next to an asset on https://dandiarchive.org and locating the `path` key.
+The `<path>` can be found by selecting the `View asset metadata` icon next to an asset on {{ instance.uri }} and locating the `path` key.
 
     dandi download --preserve-tree dandi://dandi/<dandiset-id>@<version>/<path>
 
@@ -99,13 +99,13 @@ With DataLad, you can:
 
 Learn more about DataLad from its handbook at <https://handbook.datalad.org/>.
 
-**Developers' note:** DataLad datasets are created using the [dandi/backups2datalad](https://github.com/dandi/backups2datalad/) tool which is also available for use by the community to similarly maintain mirrors of independent DANDI deployments as DataLad datasets.
+**Developers' note:** DataLad datasets are created using the [dandi/backups2datalad](https://github.com/dandi/backups2datalad/) tool which is also available for use by the community to similarly maintain mirrors of independent {{ instance.name }} deployments as DataLad datasets.
 
 ## Using WebDAV
 
-DANDI provides a [WebDAV](https://en.wikipedia.org/wiki/WebDAV) service at https://webdav.dandiarchive.org/ for accessing the data in the DANDI archive.
+{{ instance.name }} provides a [WebDAV](https://en.wikipedia.org/wiki/WebDAV) service at https://webdav.dandiarchive.org/ for accessing the data in the {{ instance.name }} archive.
 You can use any WebDAV client or even a web browser to access the data - any dandiset, any version, any file or collection of files.
-You can use any web download tool to download the data from the DANDI archive, e.g.
+You can use any web download tool to download the data from the {{ instance.name }} archive, e.g.
 
 ````commandline
 wget -r -np -nH --cut-dirs=3 https://webdav.dandiarchive.org/dandisets/000027/releases/0.210831.2033/
@@ -116,4 +116,4 @@ for a download of a specific release `0.210831.2033` of the `000027` dandiset.
 **Note:** The WebDAV service does not directly serve any file contents; it instead relies on redirects to AWS S3 storage where the contents are stored.
 You might need to configure your WebDAV client to follow redirects; e.g., for the [davfs2](https://savannah.nongnu.org/projects/davfs2) WebDAV client, set `follow_redirect` to `1` in `/etc/davfs2/davfs2.conf`.
 
-**Developers' note:** The WebDAV service's code is available at https://github.com/dandi/dandidav/ and can also be used for independent DANDI deployments.
+**Developers' note:** The WebDAV service's code is available at https://github.com/dandi/dandidav/ and can also be used for independent {{ instance.name }} deployments.

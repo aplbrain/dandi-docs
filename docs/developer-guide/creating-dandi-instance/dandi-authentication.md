@@ -5,13 +5,13 @@ Please follow the steps in [Initialize Vendors - GitHub](./initialize-vendors.md
 For the next steps in setting up authentication, you'll want to record the values
 created during [Obtaining your Oauth App creds](./initialize-vendors.md#obtaining-your-oauth-app-credentials).
 
-## Creating and Updating Objects in the DANDI Archive Admin Panel
+## Creating and Updating Objects in the {{ instance.name }} Archive Admin Panel
 
 ### Creating "Sites" and "Social App" Objects
 
-**In order to complete this step, you will need to have deployed an initial DANDI Archive API**.  See [Creating the DANDI Archive API](./dandi-archive.md) for more details.
+**In order to complete this step, you will need to have deployed an initial {{ instance.name }} Archive API**.  See [Creating the {{ instance.name }} Archive API](./dandi-archive.md) for more details.
 
-First, sign in via the Django admin panel with your credentials created via the [Creating an admin user account for the DANDI Archive API step](./dandi-archive.md#creating-a-django-superuser-admin-account)
+First, sign in via the Django admin panel with your credentials created via the [Creating an admin user account for the {{ instance.name }} Archive API step](./dandi-archive.md#creating-a-django-superuser-admin-account)
 
 The Django Admin panel should be located at: `<your_full_api_url/admin`
 
@@ -73,9 +73,9 @@ There are two places to update values relevant to the frontend.
 - `netlify.toml`
 - `.env.production`
 
-For `netlify.toml`: This should be located in the `web/` sub-directory -- [see DANDI Archive web/netlify.toml](https://github.com/dandi/dandi-archive/blob/master/web/netlify.toml). This is a file in which you can configure different settings for different environments in Netlify.
+For `netlify.toml`: This should be located in the `web/` sub-directory -- [see {{ instance.name }} Archive web/netlify.toml](https://github.com/dandi/dandi-archive/blob/master/web/netlify.toml). This is a file in which you can configure different settings for different environments in Netlify.
 
-For `.env.production`: This should also be located in the `web/` sub-directory --  [see DANDI Archive web/.env.production](https://github.com/dandi/dandi-archive/blob/master/web/.env.production). This is a file that will inject environment variables into the frontend upon build (e.g. `vite build`).
+For `.env.production`: This should also be located in the `web/` sub-directory --  [see {{ instance.name }} Archive web/.env.production](https://github.com/dandi/dandi-archive/blob/master/web/.env.production). This is a file that will inject environment variables into the frontend upon build (e.g. `vite build`).
 
 Update the relevant values that reflect what was in your `Social Application` object for both files. You will also notice an environment variable related to `Sentry` -- this value can be obtained from your Sentry account.
 

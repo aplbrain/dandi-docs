@@ -2,3 +2,4 @@ mkdocs-material>=9.6.3
 pymdown-extensions
 mkdocs-open-in-new-tab
 mkdocs-jupyter
+mkdocs-macros-plugin

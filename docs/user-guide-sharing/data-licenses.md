@@ -1,7 +1,7 @@
 # Data Licenses
 
 To create a Dandiset, you must select a license under which to share the data.
-Because the DANDI Archive provides a platform for open data sharing, the
+Because the {{ instance.name }} Archive provides a platform for open data sharing, the
 licenses come from [Creative Commons](https://creativecommons.org/), an
 international nonprofit organization dedicated to establishing, growing, and
 maintaining a shared commons in the spirit of open source.
@@ -26,4 +26,4 @@ restriction.
 
 You can learn more about the theory of how the Creative Commons licenses operate
 at [their website](https://creativecommons.org/licenses/). If you have any
-questions or concerns, send a message to help@dandiarchive.org.
+questions or concerns, send a message to help@{{ instance.domain }}.

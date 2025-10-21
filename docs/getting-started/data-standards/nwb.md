@@ -12,12 +12,12 @@ The NWB team supports APIs in Python ([PyNWB](https://pynwb.readthedocs.io/)) an
 
 The best way to get help from the NWB community is through the [NWB user Slack channel](https://nwb-users.slack.com/).
 
-## Using NWB with DANDI
+## Using NWB with {{ instance.name }}
 
-DANDI is designed to work seamlessly with NWB files. When you upload NWB files to DANDI:
+{{ instance.name }} is designed to work seamlessly with NWB files. When you upload NWB files to {{ instance.name }}:
 
 1. The files are validated to ensure they conform to the NWB standard
 2. Metadata is automatically extracted to make your data more discoverable
-3. The data can be accessed programmatically through the DANDI API
+3. The data can be accessed programmatically through the {{ instance.name }} API
 
-For more information on validating NWB files for DANDI, see the [Validating NWB Files](../../user-guide-sharing/validating-files.md) section.
+For more information on validating NWB files for {{ instance.name }}, see the [Validating NWB Files](../../user-guide-sharing/validating-files.md) section.

@@ -1,32 +1,32 @@
-This step assumes that you have completed all steps in: [Initialize Vendors](./initialize-vendors.md) & [DANDI Infrastructure](./dandi-infrastructure.md).
+This step assumes that you have completed all steps in: [Initialize Vendors](./initialize-vendors.md) & [{{ instance.name }} Infrastructure](./dandi-infrastructure.md).
 
 ## Initial Steps
 
 ### Running "terraform apply" upon dandi-infrastructure for the first time
 
-Resources (e.g. the servers and environment ) for DANDI Archive are provisioned upon applying the Terraform definitions in
+Resources (e.g. the servers and environment ) for {{ instance.name }} Archive are provisioned upon applying the Terraform definitions in
 `dandi-infrastructure`, specifically in the [api.tf definition](https://github.com/dandi/dandi-infrastructure/blob/master/terraform/api.tf)
 The resources won't be running anything until your first Heroku `release` upon the Heroku app.
 
-To see how your code would translate into a new `Heroku` release, [see the GitHub actions workflow used by DANDI Archive here](https://github.com/dandi/dandi-archive/blob/master/.github/workflows/backend-production-deploy.yml).
+To see how your code would translate into a new `Heroku` release, [see the GitHub actions workflow used by {{ instance.name }} Archive here](https://github.com/dandi/dandi-archive/blob/master/.github/workflows/backend-production-deploy.yml).
 
 ## Understanding the concept of the Procfile for Heroku
 
 Heroku initializes compute on servers (known as `dynos` in Heroku land). Each `dyno` that you have runs a process.
 Which process, the resources allocated to that process, and how that process is run, is defined in a `Procfile`.
 
-DANDI Archive defines a [Procfile](https://github.com/dandi/dandi-archive/blob/master/Procfile). In this `Procfile`,
+{{ instance.name }} Archive defines a [Procfile](https://github.com/dandi/dandi-archive/blob/master/Procfile). In this `Procfile`,
 you'll see several entries:
 
-- `release`: a command that is run each time a new version of DANDI API is pushed to Heroku.
-- `web`: runs `gunicorn`, a persistent server that handles HTTP requests for the DANDI API.
+- `release`: a command that is run each time a new version of {{ instance.name }} API is pushed to Heroku.
+- `web`: runs `gunicorn`, a persistent server that handles HTTP requests for the {{ instance.name }} API.
 - `worker`: a worker process that runs `celery` behind-the-scenes. `celery` handles tasks that would otherwise cause the API to timeout.
-- `checksum-worker`: another worker, also using `celery`, that specifically calculates if a new file pushed to DANDI Archive is new/updated, and determines what exactly has been changed.
+- `checksum-worker`: another worker, also using `celery`, that specifically calculates if a new file pushed to {{ instance.name }} Archive is new/updated, and determines what exactly has been changed.
 - `analytics-worker`: another `celery` worker that handles all tasks related to processing of S3-related logs.
 
-This `Procfile` shouldn't need to be changed or reconfigured much for a DANDI-clone; however, it is important to note so that one may understand how DANDI Archive is working.
+This `Procfile` shouldn't need to be changed or reconfigured much for a {{ instance.name }}-clone; however, it is important to note so that one may understand how {{ instance.name }} Archive is working.
 
-For information on the resource allocation of `dynos` in DANDI Archive, please reference the [DANDI Infrastructure Docs](./dandi-infrastructure.md).
+For information on the resource allocation of `dynos` in {{ instance.name }} Archive, please reference the [{{ instance.name }} Infrastructure Docs](./dandi-infrastructure.md).
 
 ## Understanding metrics and logging via Heroku
 
@@ -54,7 +54,7 @@ style="width: 60%; height: auto; display: block; margin-left: auto;  margin-righ
 
 ## Creating a Django "superuser" (Admin) Account
 
-Django has the concept of a `superuser` -- essentially an `administrator` user type. For steps such as [setting up authentication for DANDI Archive](./dandi-authentication.md#creating-and-updating-objects-in-the-dandi-archive-admin-panel) 
+Django has the concept of a `superuser` -- essentially an `administrator` user type. For steps such as [setting up authentication for {{ instance.name }} Archive](./dandi-authentication.md#creating-and-updating-objects-in-the-dandi-archive-admin-panel) 
 you'll need to set up a `superuser` account.
 
 Go into your Heroku app, and identify the `Run Console` option:
@@ -86,7 +86,7 @@ alt="heroku_user"
 style="width: 60%; height: auto; display: block; margin-left: auto;  margin-right: auto;"/>
 <br/><br/>
 
-You'll be prompted to create a user -- **Note: use an email that is not associated with your GitHub account, as GitHub is the default authentication provider for DANDI Archive**.
+You'll be prompted to create a user -- **Note: use an email that is not associated with your GitHub account, as GitHub is the default authentication provider for {{ instance.name }} Archive**.
 
 To do one final test, try using your credentials to log into the Django Admin panel -- it should be located at `/admin` for your API, such as `your-apps-domain.com/admin`.
 
@@ -96,11 +96,11 @@ You are all set here!
 
 A majority of the necessary setup steps here are defined already [during the vendor account setup for Netlify](./initialize-vendors.md#netlify).
 
-The only other major initial setup step for the DANDI Archive frontend is regarding authentication -- [see here for more details](./dandi-authentication.md#populating-appropriate-values-for-the-frontend-to-handle-authentication)
+The only other major initial setup step for the {{ instance.name }} Archive frontend is regarding authentication -- [see here for more details](./dandi-authentication.md#populating-appropriate-values-for-the-frontend-to-handle-authentication)
 
 ## API Deployment with GitHub CI/CD
 
-Within the DANDI Archive repository, GitHub actions workflows exist for deployments to [production](https://github.com/dandi/dandi-archive/blob/master/.github/workflows/backend-production-deploy.yml) and [sandbox](https://github.com/dandi/dandi-archive/blob/master/.github/workflows/backend-staging-deploy.yml) environments
+Within the {{ instance.name }} Archive repository, GitHub actions workflows exist for deployments to [production](https://github.com/dandi/dandi-archive/blob/master/.github/workflows/backend-production-deploy.yml) and [sandbox](https://github.com/dandi/dandi-archive/blob/master/.github/workflows/backend-staging-deploy.yml) environments
 
 - **Sandbox**: by default, releases are manual via the `workflow_dispatch` clause in the workflow
 
@@ -137,7 +137,7 @@ style="width: 60%; height: auto; display: block; margin-left: auto;  margin-righ
 
 ## Updating Allowed Hosts
 
-For the Django-based DANDI Archive API to receive and send HTTP requests without CORS errors, you'll need to add `ALLOWED_HOSTS` within the `dandiapi/settings.py` file.
+For the Django-based {{ instance.name }} Archive API to receive and send HTTP requests without CORS errors, you'll need to add `ALLOWED_HOSTS` within the `dandiapi/settings.py` file.
 
 The `settings.py` file, in general, can be understood as the configuration file for the Django app -- [see the Django docs for more info here](https://docs.djangoproject.com/en/5.0/topics/settings/)
 
@@ -157,7 +157,7 @@ class HerokuProductionConfiguration(DandiMixin, HerokuProductionBaseConfiguratio
 
 ## Approval of Users
 
-By default in DANDI, only users whose emails end in `.edu` are automatically approved -- [for code reference, see here](https://github.com/dandi/dandi-archive/blob/6e72653688a6b45066c04b94a44f830b734887dd/dandiapi/api/views/auth.py#L127).
+By default in {{ instance.name }}, only users whose emails end in `.edu` are automatically approved -- [for code reference, see here](https://github.com/dandi/dandi-archive/blob/6e72653688a6b45066c04b94a44f830b734887dd/dandiapi/api/views/auth.py#L127).
 
 For all other users, proceed into the Django Admin panel.
 
@@ -188,7 +188,7 @@ Additionally, we are configured to take a backup image of the Postgres database 
 
 ## Addition of the Cache Table for Metrics
 
-On the DANDI homepage, metrics exist for how many users, and how much data is stored in the Archive.
+On the {{ instance.name }} homepage, metrics exist for how many users, and how much data is stored in the Archive.
 
 <br/><br/>
 <img
@@ -197,7 +197,7 @@ alt="dandi_stats"
 style="width: 60%; height: auto; display: block; margin-left: auto;  margin-right: auto;"/>
 <br/><br/>
 
-In order to not constantly query for those values, DANDI uses a [Django cache table](https://docs.djangoproject.com/en/5.1/topics/cache/#creating-the-cache-table). This table must be separately initialized.
+In order to not constantly query for those values, {{ instance.name }} uses a [Django cache table](https://docs.djangoproject.com/en/5.1/topics/cache/#creating-the-cache-table). This table must be separately initialized.
 
 This can be done via the CLI command of:
 
@@ -209,7 +209,7 @@ You may not see updated stats immediately, as the stats are cached for 12 hours 
 
 ## Customizing Logos on the UI
 
-If you'd like to provide your own logo specific to your DANDI clone, you'll need to simply replace the referenced SVG logo in `web/src/assets/logo.svg`
+If you'd like to provide your own logo specific to your {{ instance.name }} clone, you'll need to simply replace the referenced SVG logo in `web/src/assets/logo.svg`
 
 For reference, [see here](https://github.com/dandi/dandi-archive/blob/master/web/src/assets/logo.svg)
 
