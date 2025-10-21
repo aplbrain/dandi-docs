@@ -8,7 +8,7 @@ This metadata will automatically be re-computed if you make any changes to the d
 
 ## Metadata editor
 
-DANDI also has metadata that you must set manually using the `METADATA` button on the right panel.
+{{ instance.name }} also has metadata that you must set manually using the `METADATA` button on the right panel.
 Any `Owner` of a Dandiset has the ability to edit the manual Dandiset metadata through this editor.
 Several fields here are essential for publication, and the rest provide opportunities to make your Dandiset
 more FAIR, enabling secondary analysis.
@@ -65,4 +65,4 @@ It is highly recommended to add links to the following resources (if they exist)
   * The public code repository used to convert the data
   * A data analysis library associated with the publication that can take this data as input
   * An example notebook submitted to http://github.com/dandi/example-notebooks that demonstrates how to use the data
-  * Associated datasets published on DANDI or on other archives.
+  * Associated datasets published on {{ instance.name }} or on other archives.

@@ -1,6 +1,6 @@
 # Converting Data to NWB
 
-Before uploading data to DANDI, you need to convert it to the NWB (Neurodata Without Borders) format. This page provides an overview of the conversion process and available tools.
+Before uploading data to {{ instance.name }}, you need to convert it to the NWB (Neurodata Without Borders) format. This page provides an overview of the conversion process and available tools.
 
 ## Why Convert to NWB?
 
@@ -19,7 +19,7 @@ We suggest beginning the conversion process using only a small amount of data so
 
 Several tools are available to help you convert your data to NWB format:
 
-1. **[NWB Graphical User Interface for Data Entry (GUIDE)](https://nwb-guide.readthedocs.io/en/stable/)** is a cross-platform desktop application for converting data from common proprietary formats to NWB and uploading it to DANDI.
+1. **[NWB Graphical User Interface for Data Entry (GUIDE)](https://nwb-guide.readthedocs.io/en/stable/)** is a cross-platform desktop application for converting data from common proprietary formats to NWB and uploading it to {{ instance.name }}.
 
 2. **[NeuroConv](https://neuroconv.readthedocs.io/)** is a Python library that automates conversion to NWB from a variety of popular formats. See the [Conversion Gallery](https://neuroconv.readthedocs.io/en/main/conversion_examples_gallery/index.html) for example conversion scripts.
 
@@ -35,5 +35,5 @@ Converting data to NWB can be challenging, especially for complex datasets or fo
 
 After converting your data to NWB, you should:
 
-1. [Validate your NWB files](../../validating-files.md) to ensure they meet DANDI's requirements
-2. [Upload your data to DANDI](../../uploading-data.md)
+1. [Validate your NWB files](../../validating-files.md) to ensure they meet {{ instance.name }}'s requirements
+2. [Upload your data to {{ instance.name }}](../../uploading-data.md)

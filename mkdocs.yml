@@ -1,29 +1,29 @@
-site_name: DANDI Documentation
-repo_name: "dandi/dandi-docs"
-repo_url: "https://github.com/dandi/dandi-docs"
+site_name: EMBER-DANDI Documentation
+repo_name: "aplbrain/dandi-docs"
+repo_url: "https://github.com/aplbrain/dandi-docs"
 copyright: "CC-BY 4.0"
 use_directory_urls: true
-site_url: https://docs.dandiarchive.org
+site_url: https://docs-dandi.emberarchive.org
 
 # Material theme
 theme:
   name: "material"
   language: "en"
   favicon: img/favicon.ico
-  logo: img/dandi-logo-square_sw.png
+  logo: img/ember-logo.png
   palette:
     - scheme: default
       toggle:
         icon: material/weather-night
         name: Dark mode
-      primary: "dark blue"
-      accent: "light blue"
+      primary: deep orange
+      accent: red
     - scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Light mode
-      primary: "dark blue"
-      accent: "light blue"
+      primary: amber
+      accent: red
   features:
     - toc.integrate
 
@@ -68,22 +68,22 @@ nav:
     - Advanced Asset Search: "example-notebooks/tutorials/cosyne_2023/advanced_asset_search.ipynb"
     - Streaming and interacting with NWB data: "example-notebooks/tutorials/bcm_2024/analysis-demo.ipynb"
     - NWB Widget Demo: "example-notebooks/demos/NWBWidget-demo.ipynb"
-  - Developer Guide:
-    - System Architecture: "developer-guide/system-architecture.md"
-    - Developer Notes: "developer-guide/developer-notes.md"
-    - Integrate External Services with DANDI: "developer-guide/integrate-external-services.md"
-    - Contributing Documentation: "developer-guide/contributing-documentation.md"
-    - Creating a DANDI Instance:
-      - Overview: "developer-guide/creating-dandi-instance/index.md"
-      - Initialize Vendor Accounts: "developer-guide/creating-dandi-instance/initialize-vendors.md"
-      - DANDI Infrastructure: "developer-guide/creating-dandi-instance/dandi-infrastructure.md"
-      - DANDI Archive: "developer-guide/creating-dandi-instance/dandi-archive.md"
-      - DANDI Authentication: "developer-guide/creating-dandi-instance/dandi-authentication.md"
-      - DANDI Client: "developer-guide/creating-dandi-instance/dandi-cli.md"
-      - DANDI Hub: "developer-guide/creating-dandi-instance/dandi-hub.md"
-  - Health Status:
-    - Dandisets: https://github.com/dandi/dandisets-healthstatus
-    - Services: https://status.dandiarchive.org
+  # - Developer Guide:
+  #   - System Architecture: "developer-guide/system-architecture.md"
+  #   - Developer Notes: "developer-guide/developer-notes.md"
+  #   - Integrate External Services with DANDI: "developer-guide/integrate-external-services.md"
+  #   - Contributing Documentation: "developer-guide/contributing-documentation.md"
+  #   - Creating a DANDI Instance:
+  #     - Overview: "developer-guide/creating-dandi-instance/index.md"
+  #     - Initialize Vendor Accounts: "developer-guide/creating-dandi-instance/initialize-vendors.md"
+  #     - DANDI Infrastructure: "developer-guide/creating-dandi-instance/dandi-infrastructure.md"
+  #     - DANDI Archive: "developer-guide/creating-dandi-instance/dandi-archive.md"
+  #     - DANDI Authentication: "developer-guide/creating-dandi-instance/dandi-authentication.md"
+  #     - DANDI Client: "developer-guide/creating-dandi-instance/dandi-cli.md"
+  #     - DANDI Hub: "developer-guide/creating-dandi-instance/dandi-hub.md"
+  # - Health Status:
+    # - Dandisets: https://github.com/dandi/dandisets-healthstatus
+    # - Services: https://status.dandiarchive.org
   - Terms and Policies:
     - Terms: "terms-policies/terms.md"
     - Policies: "terms-policies/policies.md"
@@ -112,6 +112,10 @@ plugins:
   - mkdocs-jupyter:
       ignore_h1_titles: True
       include: ["*.ipynb"]
+  - macros
+  - exclude:
+      glob:
+        - developer-guide/*
 
 # Customize theme
 extra:
@@ -135,3 +139,10 @@ extra:
     - icon: fontawesome/brands/bluesky
       link: https://bsky.app/profile/dandiarchive.org
       name: Bluesky
+  instance:
+    name: EMBER-DANDI
+    uri: https://dandi.emberarchive.org
+    sandbox_uri: https://apl-setup--ember-dandi-archive.netlify.app
+    domain: emberarchive.org
+    api: https://api-dandi.emberarchive.org
+    sandbox_api: https://api-dandi.sandbox.emberarchive.org

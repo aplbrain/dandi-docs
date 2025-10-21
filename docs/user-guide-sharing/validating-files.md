@@ -2,7 +2,7 @@
 
 ## Validating NWB Files
 
-To be accepted by DANDI, NWB files must conform to criteria that are enforced via three levels of validation:
+To be accepted by {{ instance.name }}, NWB files must conform to criteria that are enforced via three levels of validation:
 
 ## NWB File Validation
 [PyNWB validation](https://pynwb.readthedocs.io/en/stable/validation.html) is used to validate the NWB files, 
@@ -15,12 +15,12 @@ The [NWB Inspector](https://nwbinspector.readthedocs.io/en/dev/) scans NWB files
 or areas for improvements in NWB files. There are three levels of importance for checks: `CRITICAL`, 
 `BEST PRACTICE VIOLATIONS`, and `BEST PRACTICE SUGGESTIONS`. `CRITICAL` warnings indicate some internal inconsistency in the data of the 
 NWB files. The NWB Inspector will print out all warnings, but only `CRITICAL` warnings will prevent a file from being 
-uploaded to DANDI. Errors in NWB Inspector will be block upload as well, but reflect a problem with the NWB 
+uploaded to {{ instance.name }}. Errors in NWB Inspector will be block upload as well, but reflect a problem with the NWB 
 Inspector software as opposed to the NWB file. 
 
-## Missing DANDI Metadata
-DANDI has requirements for metadata beyond what is strictly required for NWB validation. The following metadata must 
-be present in the NWB file for a successful upload to DANDI:
+## Missing {{ instance.name }} Metadata
+{{ instance.name }} has requirements for metadata beyond what is strictly required for NWB validation. The following metadata must 
+be present in the NWB file for a successful upload to {{ instance.name }}:
 
   - You must define a `Subject` object.
   - The `Subject` object must have a `subject_id` attribute.
@@ -31,10 +31,10 @@ be present in the NWB file for a successful upload to DANDI:
   for 70 days, or, if it is a range, must be "[lower]/[upper]", e.g. "P10W/P12W", which means "between 10 and 12 weeks"
 
 These requirements are specified in the 
-[DANDI configuration file of NWB Inspector](https://github.com/NeurodataWithoutBorders/nwbinspector/blob/dev/src/nwbinspector/internal_configs/dandi.inspector_config.yaml).
+[{{ instance.name }} configuration file of NWB Inspector](https://github.com/NeurodataWithoutBorders/nwbinspector/blob/dev/src/nwbinspector/internal_configs/dandi.inspector_config.yaml).
 
 Passing all of these levels of validation can sometimes be tricky. If you have any questions, please ask them via the 
-[DANDI Help Desk](https://github.com/dandi/helpdesk/discussions) and we would be happy to assist you.
+[{{ instance.name }} Help Desk](https://github.com/dandi/helpdesk/discussions) and we would be happy to assist you.
 
 ## Validating BIDS Files
 

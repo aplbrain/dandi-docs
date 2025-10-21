@@ -1,10 +1,10 @@
 # Exploring Dandisets
 
-This page explains how to browse, search, and view Dandisets in the DANDI Archive.
+This page explains how to browse, search, and view Dandisets in the {{ instance.name }} Archive.
 
 ## Browse Dandisets
 
-When you go to the [DANDI Web application](https://dandiarchive.org/), you can click
+When you go to the [{{ instance.name }} Web application]({{ instance.uri }}/), you can click
 on `PUBLIC DANDISET` to access all Dandisets currently available 
 in the archive, and you can sort them by name, identifier, size, or date of modification.
 

@@ -1,14 +1,14 @@
 # External Services
 
-DANDI integrates with various external services to enhance data accessibility and analysis capabilities. This page describes the external services that can be used with DANDI data.
+{{ instance.name }} integrates with various external services to enhance data accessibility and analysis capabilities. This page describes the external services that can be used with {{ instance.name }} data.
 
 ## NWB Explorer
 
 [NWB Explorer](https://nwbexplorer.opensourcebrain.org/) is a web-based tool for visualizing and exploring NWB files. It provides an interactive interface for browsing NWB file structure and visualizing data without requiring any programming.
 
-### Using NWB Explorer with DANDI
+### Using NWB Explorer with {{ instance.name }}
 
-1. Navigate to a Dandiset on the DANDI Archive
+1. Navigate to a Dandiset on the {{ instance.name }} Archive
 2. Browse to an NWB file
 3. Look for the "Open with NWB Explorer" link next to the file
 4. Click the link to open the file in NWB Explorer
@@ -24,9 +24,9 @@ NWB Explorer allows you to:
 
 [Neurosift](https://neurosift.app/) is a web-based visualization platform for neurophysiology data. It provides interactive visualizations for various types of neural data, including spike trains, LFP, and tracking data.
 
-### Using Neurosift with DANDI
+### Using Neurosift with {{ instance.name }}
 
-1. Navigate to a Dandiset on the DANDI Archive
+1. Navigate to a Dandiset on the {{ instance.name }} Archive
 2. Browse to an NWB file
 3. Look for the "Open with Neurosift" link next to the file
 4. Click the link to open the file in Neurosift
@@ -40,11 +40,11 @@ Neurosift allows you to:
 
 ## Custom Integrations
 
-DANDI provides a [REST API](https://api.dandiarchive.org/swagger) that can be used to build custom integrations with other services. The API allows you to:
+{{ instance.name }} provides a [REST API]({{ instance.api }}/swagger) that can be used to build custom integrations with other services. The API allows you to:
 
 - Search for Dandisets and assets
 - Get metadata for Dandisets and assets
 - Download assets
 - And more
 
-For more information on the DANDI API, see the [API documentation](../../api/rest-api.md).
+For more information on the {{ instance.name }} API, see the [API documentation](../../api/rest-api.md).
